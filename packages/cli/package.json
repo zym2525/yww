@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "@zym-d/cli",
   "version": "0.1.1",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/lib/index.js",
