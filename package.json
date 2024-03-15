@@ -35,13 +35,13 @@
     ]
   },
   "devDependencies": {
-    "@modern-js/monorepo-tools": "2.47.1",
-    "@modern-js/eslint-config": "2.47.1",
-    "@modern-js/tsconfig": "2.47.1",
     "@modern-js-app/eslint-config": "2.47.1",
-    "lint-staged": "~13.1.0",
-    "prettier": "^2.6.2",
-    "husky": "^8.0.0"
+    "@modern-js/eslint-config": "2.47.1",
+    "@modern-js/monorepo-tools": "2.47.1",
+    "@modern-js/tsconfig": "2.47.1",
+    "husky": "^8.0.3",
+    "lint-staged": "~13.1.4",
+    "prettier": "^2.8.8"
   },
   "publishConfig": {
     "access": "public",
