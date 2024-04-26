@@ -1,6 +1,6 @@
 {
-  "name": "@yww-mm/openapi",
-  "version": "0.0.4",
+  "name": "@ywwmm/openapi",
+  "version": "0.0.1",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

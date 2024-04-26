@@ -1,5 +1,5 @@
 {
-  "name": "@yww-mm/cli",
+  "name": "@ywwmm/cli",
   "version": "0.0.1",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/lib/index.js",
