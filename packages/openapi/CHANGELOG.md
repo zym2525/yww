@@ -1,5 +1,11 @@
 # @yww-mm/openapi
 
+## 0.0.2
+
+### Patch Changes
+
+- ca30b55: 修改了一些东西
+
 ## 0.0.4
 
 ### Patch Changes
