@@ -18,11 +18,6 @@
   "engines": {
     "node": ">=16.18.1"
   },
-  // "lint-staged": {
-  //   "*.{js,jsx,ts,tsx,mjs,cjs}": [
-  //     "eslint --ext .vue --ext .js --ext .ts --fix --color --cache --quiet"
-  //   ]
-  // },
   "eslintIgnore": [
     "node_modules/",
     "dist/",
