@@ -32,6 +32,7 @@
   ],
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
+  "eslint.validate": ["vue", "ts", "tsx", "js"],
   "javascript.validate.enable": false,
   "typescript.validate.enable": true,
   "css.validate": false,
@@ -45,7 +46,8 @@
   "[scss]": {
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "[less]": {
     "editor.formatOnType": true,
@@ -56,8 +58,6 @@
     "source.fixAll.eslint": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "javascript.format.enable": false,
-  "typescript.format.enable": false,
   //
   "json.format.enable": false,
   "[json]": {
@@ -71,6 +71,15 @@
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "emmet.triggerExpansionOnTab": true,
   "typescript.tsdk": "node_modules/typescript/lib"

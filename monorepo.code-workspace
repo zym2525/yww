@@ -93,5 +93,70 @@
     },
     "emmet.triggerExpansionOnTab": true,
     "typescript.tsdk": "node_modules/typescript/lib"
+  },
+  "launch": {
+    "configurations": [
+      {
+        "name": "调试cli create",
+        "type": "node",
+        "request": "launch",
+        "runtimeArgs": ["-r", "ts-node/register"],
+        "cwd": "${workspaceRoot}/packages/cli/test",
+        "protocol": "inspector",
+        "internalConsoleOptions": "openOnSessionStart",
+        "console": "integratedTerminal",
+        "args": [
+          "${workspaceFolder}\\packages\\cli\\bin\\bole",
+          "create",
+          "test",
+          "-d"
+        ]
+      },
+      {
+        "name": "调试cli openapi",
+        "type": "node",
+        "request": "launch",
+        "runtimeArgs": ["-r", "ts-node/register"],
+        "cwd": "${workspaceRoot}/packages/cli/test",
+        "protocol": "inspector",
+        "internalConsoleOptions": "openOnSessionStart",
+        "args": [
+          "${workspaceFolder}\\packages\\cli\\bin\\bole",
+          "openapi",
+          "--config",
+          "./openapi.json",
+          "-d"
+        ]
+      },
+      {
+        "name": "调试openapi generateService",
+        "type": "node",
+        "request": "launch",
+        "runtimeArgs": ["-r", "ts-node/register"],
+        "cwd": "${workspaceRoot}/packages/openapi/test",
+        "protocol": "inspector",
+        "internalConsoleOptions": "openOnSessionStart",
+        "args": ["${workspaceFolder}\\packages\\openapi\\test\\bole-test"]
+      }
+      // {
+      //     "name": "Launch Program2",
+      //     "program": "${workspaceFolder}\\packages\\cli\\bin\\bole",
+      //     "request": "launch",
+      //     "skipFiles": [
+      //         "<node_internals>/**"
+      //     ],
+      //     "cwd": "${workspaceRoot}/packages/cli/test",
+      //     "type": "node",
+      //     "args": [
+      //         "create",
+      //         "test",
+      //         "-d",
+      //     ],
+      //     "console": "integratedTerminal",
+      //     "outFiles": [
+      //         "${workspaceFolder}/packages/cli/dist/**/*.js",
+      //     ]
+      // },
+    ]
   }
 }
