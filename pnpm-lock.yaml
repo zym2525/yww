@@ -58,6 +58,9 @@ importers:
       '@umijs/fabric':
         specifier: 2.5.6
         version: 2.5.6(prettier@2.2.1)
+      chalk:
+        specifier: ^4.0.0
+        version: 4.0.0
       dayjs:
         specifier: 1.10.3
         version: 1.10.3
@@ -4374,6 +4377,13 @@ packages:
       escape-string-regexp: 1.0.5
       supports-color: 5.5.0
 
+  /chalk@4.0.0:
+    resolution: {integrity: sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==}
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+
   /chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
@@ -5869,7 +5879,7 @@ packages:
       '@eslint/eslintrc': 0.4.3
       '@humanwhocodes/config-array': 0.5.0
       ajv: 6.12.6
-      chalk: 4.1.2
+      chalk: 4.0.0
       cross-spawn: 7.0.3
       debug: 4.3.4(supports-color@9.3.1)
       doctrine: 3.0.0
@@ -5922,7 +5932,7 @@ packages:
       '@nodelib/fs.walk': 1.2.8
       '@ungap/structured-clone': 1.2.0
       ajv: 6.12.6
-      chalk: 4.1.2
+      chalk: 4.0.0
       cross-spawn: 7.0.3
       debug: 4.3.4(supports-color@9.3.1)
       doctrine: 3.0.0

@@ -91,7 +91,7 @@ export const formatApiInfo = (apiInfo: Record<string, any>): any => {
 
   for (const child_path in apiInfo.schema.paths) {
     apiInfo.schema.paths[child_path].post.tags = apiInfo.schema.paths[child_path].post.tags.map(
-      (tag: string) => getTagName(tag),
+      (tag: string) => getTagName(tag)
     );
   }
 
@@ -121,7 +121,7 @@ type serviceParams = Record<string, serviceParam>;
  */
 export function formatParamsForYFH(
   params: serviceParams,
-  paramsObject: serviceParams = {},
+  paramsObject: serviceParams = {}
 ): serviceParams {
   Object.keys(params).forEach((name) => {
     const prop = params[name];
@@ -183,13 +183,13 @@ function combineParams(
   child_key: string,
   prop: serviceParam,
   paramsObject: serviceParams,
-  type?: string,
+  type?: string
 ): serviceParam {
   const typeSuffix = type === '.n.key.m' ? '[]' : '';
   const keySuffix = type === '.n.key' || type === '.n.key.m' ? '[]' : '';
   if (paramsObject[key]) {
     const child_type = `{${child_key}:${prop.type}${typeSuffix}, ${paramsObject[key].type.slice(
-      1,
+      1
     )}`;
     paramsObject[key] = {
       ...paramsObject[key],

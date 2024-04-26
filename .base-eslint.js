@@ -51,5 +51,10 @@ module.exports = {
           varsIgnorePattern: '^_',
         },
       ],
+      'import/no-commonjs': 0,
+      '@typescript-eslint/no-require-imports': 0,
+      '@typescript-eslint/no-var-requires': 0,
+      '@typescript-eslint/prefer-optional-chain': 0,
+      '@typescript-eslint/naming-convention': 0
     },
   };

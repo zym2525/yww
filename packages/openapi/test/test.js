@@ -33,7 +33,7 @@ const gen = async () => {
       customFunctionName: (data) => {
         let funName = data.operationId ? data.operationId : '';
         const suffix = 'Using';
-        if (funName.indexOf(suffix) != -1) {
+        if (funName.indexOf(suffix) !== -1) {
           funName = funName.substring(0, funName.lastIndexOf(suffix));
         }
         return funName;
@@ -59,7 +59,7 @@ const gen = async () => {
   // check 文件生成
   const fileControllerStr = fs.readFileSync(
     path.join(__dirname, 'file-servers/api/fileController.ts'),
-    'utf8',
+    'utf8'
   );
   assert(fileControllerStr.indexOf('!(item instanceof File)') > 0);
   assert(fileControllerStr.indexOf(`requestType: 'form',`) > 0);

@@ -462,7 +462,9 @@ class ServiceGenerator {
                   : params;
 
               // 处理 query 中的复杂对象
+              //@ts-ignore
               if (finalParams && finalParams.query) {
+                  //@ts-ignore
                 finalParams.query = finalParams.query.map((ele) => ({
                   ...ele,
                   isComplexType: ele.isObject,
