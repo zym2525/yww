@@ -1,5 +1,11 @@
 # @yww-mm/openapi
 
+## 0.0.4
+
+### Patch Changes
+
+- 5e5fcfb: 修改 openapi
+
 ## 0.0.3
 
 ### Patch Changes
