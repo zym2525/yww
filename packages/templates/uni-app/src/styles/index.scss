@@ -1,0 +1,68 @@
+@use './var.scss' as *;
+@use './function.scss' as *;
+@use './reset.scss' as *;
+@use './mixins.scss' as *;
+@use './font.scss' as *;
+@use 'sass:map';
+
+:root,
+page {
+  --primary-color: #{map.get($bole-colors, 'primary')};
+
+  @include bole-set-component-css-var('color', $bole-colors);
+  @include bole-set-component-css-var('text-color', $bole-text-color);
+  @include bole-set-component-css-var('size', $bole-size);
+
+  overflow: hidden;
+  font-family: 'Source Han Sans CN', 'PingFang SC', miui, 'Microsoft Yahei', BlinkMacSystemFont,
+    'Helvetica Neue', Helvetica, 'Segoe UI', Arial, Roboto, 'Hiragino Sans GB', sans-serif;
+  background-color: map.get($bole-colors, 'body-background-color');
+}
+
+.clearfix::after {
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  content: '';
+}
+
+.clearfix {
+  /* 触发 hasLayout */
+  zoom: 1;
+}
+
+// 解决iPhone x 以后的机型 底部安全区域的问题 https://jelly.jd.com/article/6006b1055b6c6a01506c87fd
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.primary {
+  color: boleGetCssVar('color', 'primary');
+}
+
+.warning {
+  color: boleGetCssVar('color', 'warning');
+}
+
+.danger {
+  color: boleGetCssVar('color', 'danger');
+}
+
+.success {
+  color: boleGetCssVar('color', 'success');
+}
+
+.common-infinite-scroll-list {
+  @include listScrollView;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+loading-layout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}

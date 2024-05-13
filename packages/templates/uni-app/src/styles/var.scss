@@ -1,0 +1,35 @@
+@use './custom_theme.scss' as *;
+@use 'sass:map';
+@use 'sass:math';
+
+$bole-colors: () !default;
+$bole-colors: map.deep-merge(
+  (
+    'primary': $primary-color,
+    'body-background-color': $body-background-color,
+    'title-color': '#000000',
+    'shadow-color': rgb(0 0 0 / 3%),
+    'warning': $warning-color,
+    'danger': $error-color,
+    'success': $success-color,
+    'info': $info-color,
+  ),
+  $bole-colors
+);
+
+$bole-text-color: (
+  'primary': $text-primary-color,
+  'regular': $text-regular-color,
+  'secondary': $text-secondary-color,
+  'placeholder': $text-placeholder-color,
+);
+
+$bole-size: () !default;
+$bole-size: map.deep-merge(
+  (
+    'body-padding-h': 30px,
+  ),
+  $bole-size
+);
+
+$base-footer-box-shadow: 0 -5px 10px 0 map.get($bole-colors, 'shadow-color');

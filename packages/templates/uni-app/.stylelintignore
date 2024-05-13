@@ -1,0 +1,7 @@
+/dist/*
+/public/*
+public/*
+
+/src/assets/iconfont/*
+
+src/TUIKit/**/*

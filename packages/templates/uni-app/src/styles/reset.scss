@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+p,
+ul,
+input,
+i,
+b,
+em,
+li,
+ol,
+dl,
+dd,
+page {
+  padding: 0;
+  margin: 0;
+  font: 32px 'Source Han Sans CN';
+  font-family: 'Source Han Sans CN', 'PingFang SC', miui, 'Microsoft Yahei', BlinkMacSystemFont,
+    'Helvetica Neue', Helvetica, 'Segoe UI', Arial, Roboto, 'Hiragino Sans GB', sans-serif;
+  list-style: none;
+}
+
+img,
+image {
+  display: block;
+  border: none;
+}

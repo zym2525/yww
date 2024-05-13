@@ -1,0 +1,17 @@
+/dist/*
+.local
+.output.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*
+/src/assets/iconfont/*
+/src/subpackages/login/userPolicy
+
+*.d.ts
+
+.npmrc
+
+src/TUIKit/**/*

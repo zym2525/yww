@@ -1,0 +1,78 @@
+/* stylelint-disable */
+@use 'sass:map';
+@use './config.scss';
+
+@mixin bole-set-css-var-value($name, $value) {
+  #{boleJoinVarName($name)}: #{$value};
+}
+
+@function boleJoinVarName($list) {
+  $name: '--' + config.$bole-namespace;
+
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+
+  @return $name;
+}
+
+// getCssVar('button', 'text-color') => var(--bole-button-text-color)
+@function boleGetCssVar($args...) {
+  @return var(#{boleJoinVarName($args)});
+}
+
+// getCssVarName('button', 'text-color') => '--bole-button-text-color'
+@function boleGetCssVarName($args...) {
+  @return boleJoinVarName($args);
+}
+
+// getCssVarWithDefault(('button', 'text-color'), red) => var(--el-button-text-color, red)
+@function boleGetCssVarWithDefault($args, $default) {
+  @return var(#{boleJoinVarName($args)}, #{$default});
+}
+
+// set all css var for component by map
+@mixin bole-set-component-css-var($name, $variables) {
+  @each $attribute, $value in $variables {
+    @if $attribute == 'default' {
+      #{boleGetCssVarName($name)}: #{$value};
+    } @else {
+      #{boleGetCssVarName($name, $attribute)}: #{$value};
+    }
+  }
+}
+
+// bem('block', 'element', 'modifier') => 'el-block__element--modifier'
+@function bem($block, $element: '', $modifier: '') {
+  $name: config.$bole-namespace + config.$bole-separator + $block;
+
+  @if $element != '' {
+    $name: $name + config.$bole-element-separator + $element;
+  }
+
+  @if $modifier != '' {
+    $name: $name + config.$bole-modifier-separator + $modifier;
+  }
+
+  // @debug $name;
+  @return $name;
+}
+
+@mixin bole-set-css-color-type($colors, $type) {
+  @include bole-set-css-var-value(('color', $type), map.get($colors, $type, 'base'));
+
+  @each $i in (3, 5, 7, 8, 9) {
+    @include bole-set-css-var-value(
+      ('color', $type, 'light', $i),
+      map.get($colors, $type, 'light-#{$i}')
+    );
+  }
+
+  @include bole-set-css-var-value(('color', $type, 'dark-2'), map.get($colors, $type, 'dark-2'));
+}
+
+@function mapGet($args1, $args2) {
+  @return map.get($args1, $args2);
+}
