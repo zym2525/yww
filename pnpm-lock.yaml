@@ -7,6 +7,9 @@ importers:
       '@modern-js-app/eslint-config':
         specifier: 2.47.1
         version: 2.47.1(typescript@5.0.4)
+      '@modern-js/create':
+        specifier: 2.47.1
+        version: 2.47.1
       '@modern-js/eslint-config':
         specifier: 2.47.1
         version: 2.47.1(typescript@5.0.4)
@@ -29,7 +32,7 @@ importers:
   packages/cli:
     dependencies:
       '@ywwmm/openapi':
-        specifier: workspace:^
+        specifier: workspace:^*
         version: link:../openapi
     devDependencies:
       '@modern-js/eslint-config':
@@ -5578,6 +5581,11 @@ packages:
       '@modern-js/plugin': 2.49.3
       '@modern-js/utils': 2.49.3
       '@swc/helpers': 0.5.3
+    dev: true
+
+  /@modern-js/create@2.47.1:
+    resolution: {integrity: sha512-Qw/eMbS/vrdZ5eJZNXuMWoL1mlHrHA5TBN41usN8DUX1yRyQZKfw3pas3Jeu0Oq3mKgJzLyJVTGRB6iU2Kuydw==}
+    hasBin: true
     dev: true
 
   /@modern-js/eslint-config@2.47.1(typescript@5.0.4):
