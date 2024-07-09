@@ -17,6 +17,7 @@
     "rootDir": "src",
     "skipLibCheck": true,
     "strict": false,
+    "composite": true,
     "module": "CommonJS"
   },
   "exclude": [

@@ -165,3 +165,5 @@ export const generateService = async ({
     });
   }
 };
+
+export const asd = '12345'

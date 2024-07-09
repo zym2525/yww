@@ -27,6 +27,10 @@ importers:
         version: 2.8.8
 
   packages/cli:
+    dependencies:
+      '@ywwmm/openapi':
+        specifier: workspace:^
+        version: link:../openapi
     devDependencies:
       '@modern-js/eslint-config':
         specifier: 2.47.1

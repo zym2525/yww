@@ -11,13 +11,20 @@
     "lib": ["DOM", "ESNext"],
     "moduleResolution": "node",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@ywwmm/*": ["packages/*"]
     },
     "resolveJsonModule": true,
     "rootDir": "src",
     "skipLibCheck": true,
+    "composite": true,
     "strict": true
   },
+  "references": [
+    {
+      "path": "../openapi"
+    }
+  ],
   "exclude": ["**/node_modules"],
   "include": ["src"]
 }

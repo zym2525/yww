@@ -1,3 +1,7 @@
+import { asd } from '@ywwmm/openapi';
+
+console.log('asd: ', asd);
+
 export function hello() {
   return 'hello world';
 }
