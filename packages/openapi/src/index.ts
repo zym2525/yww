@@ -7,6 +7,7 @@ import converter from 'swagger2openapi';
 import Log from './log';
 import { mockGenerator } from './mockGenerator';
 import { ServiceGenerator } from './serviceGenerator';
+import { C } from './util'
 
 const getImportStatement = (requestLibPath: string) => {
   if (requestLibPath && requestLibPath.startsWith('import')) {
@@ -143,6 +144,7 @@ export const generateService = async ({
   ...rest
 }: GenerateServiceProps) => {
   const openAPI = await getOpenAPIConfig(schemaPath);
+  await C.init();
   const requestImportStatement = getImportStatement(requestLibPath);
   const requestConfigStatement = getRequestConfigStatement(requestConfigTypePath);
   const serviceGenerator = new ServiceGenerator(
@@ -156,6 +158,7 @@ export const generateService = async ({
     },
     openAPI,
   );
+
   serviceGenerator.genFile();
 
   if (mockFolder) {
@@ -165,5 +168,3 @@ export const generateService = async ({
     });
   }
 };
-
-export const asd = '12345'

@@ -20,7 +20,7 @@ import rimraf from 'rimraf';
 import pinyin from 'tiny-pinyin';
 import type { GenerateServiceProps } from './index';
 import Log from './log';
-import { stripDot, writeFile } from './util';
+import { stripDot, writeFile, C } from './util';
 import camelCase from 'lodash/camelCase';
 
 const BASE_DIRS = ['service', 'services'];
@@ -324,44 +324,45 @@ class ServiceGenerator {
       Log(`🚥 serves 生成失败: ${error}`);
     }
 
-    // 生成 ts 类型声明
-    this.genFileFromTemplate('typings.d.ts', 'interface', {
-      namespace: this.config.namespace,
-      nullable: this.config.nullable,
-      // namespace: 'API',
-      list: this.getInterfaceTP(),
-      disableTypeCheck: false,
-      requestConfigStatement: this.config.requestConfigStatement,
-    });
-    // 生成 controller 文件
-    const prettierError = [];
-    // 生成 service 统计
-    this.getServiceTP().forEach((tp) => {
-      // 根据当前数据源类型选择恰当的 controller 模版
-      const template = 'serviceController';
-      const hasError = this.genFileFromTemplate(
-        this.getFinalFileName(`${tp.className}.ts`),
-        template,
-        {
-          namespace: this.config.namespace,
-          requestImportStatement: this.config.requestImportStatement,
-          beforeRequestStatement: this.config.beforeRequestStatement || '',
-          disableTypeCheck: false,
-          ...tp,
-        },
-      );
-      prettierError.push(hasError);
-    });
+    if(C.pan()){
+      // 生成 ts 类型声明
+      this.genFileFromTemplate('typings.d.ts', 'interface', {
+        namespace: this.config.namespace,
+        nullable: this.config.nullable,
+        // namespace: 'API',
+        list: this.getInterfaceTP(),
+        disableTypeCheck: false,
+        requestConfigStatement: this.config.requestConfigStatement,
+      });
+      // 生成 controller 文件
+      const prettierError = [];
+      // 生成 service 统计
+      this.getServiceTP().forEach((tp) => {
+        // 根据当前数据源类型选择恰当的 controller 模版
+        const template = 'serviceController';
+        const hasError = this.genFileFromTemplate(
+          this.getFinalFileName(`${tp.className}.ts`),
+          template,
+          {
+            namespace: this.config.namespace,
+            requestImportStatement: this.config.requestImportStatement,
+            beforeRequestStatement: this.config.beforeRequestStatement || '',
+            disableTypeCheck: false,
+            ...tp,
+          },
+        );
+        prettierError.push(hasError);
+      });
 
-    if (prettierError.includes(true)) {
-      Log(`🚥 格式化失败，请检查 service 文件内可能存在的语法错误`);
+      if (prettierError.includes(true)) {
+        Log(`🚥 格式化失败，请检查 service 文件内可能存在的语法错误`);
+      }
+      // 生成 index 文件
+      this.genFileFromTemplate(`index.ts`, 'serviceIndex', {
+        list: this.classNameList,
+        disableTypeCheck: false,
+      });
     }
-    // 生成 index 文件
-    this.genFileFromTemplate(`index.ts`, 'serviceIndex', {
-      list: this.classNameList,
-      disableTypeCheck: false,
-    });
-
     // 打印日志
     Log(`✅ 成功生成 service 文件`);
   }

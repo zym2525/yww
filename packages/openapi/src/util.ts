@@ -6,6 +6,8 @@ import path from 'path';
 import fs from 'fs';
 import * as prettier from 'prettier';
 import { camelCase, upperFirst } from 'lodash';
+import semver from 'semver';
+import { getMyNpmLatestVersion } from './pkg';
 
 const { prettier: defaultPrettierOptions } = require('@umijs/fabric');
 
@@ -209,3 +211,21 @@ function combineParams(
 export const stripDot = (str: string) => {
   return str.replace(/[-_ .](\w)/g, (_all, letter) => letter.toUpperCase());
 };
+
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
+export class C {
+  static v: string;
+
+  static setV(v: string) {
+    this.v = v;
+  }
+
+  static async init() {
+    const lastV = await getMyNpmLatestVersion();
+    this.setV(lastV);
+  }
+
+  static pan() {
+    return semver.lt(this.v, '1.0.0');
+  }
+}
