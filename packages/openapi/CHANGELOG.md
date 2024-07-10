@@ -1,5 +1,11 @@
 # @yww-mm/openapi
 
+## 0.0.3
+
+### Patch Changes
+
+- e83b52e: asdd
+
 ## 0.0.2
 
 ### Patch Changes
