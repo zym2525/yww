@@ -1,0 +1,5 @@
+---
+'@ywwmm/openapi': patch
+---
+
+asdd
