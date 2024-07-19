@@ -1,7 +1,7 @@
 import axios from 'axios';
 import semver from 'semver';
 
-const RegistryUrl = 'https://registry.npmjs.org/';
+const RegistryUrl = 'https://registry.npmmirror.com/';
 
 export function getNpmInfo(npmName: string) {
   if (!npmName) {
