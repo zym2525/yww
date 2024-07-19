@@ -40,5 +40,5 @@ export async function getNpmLatestVersion(npmName: string) {
 }
 
 export function getMyNpmLatestVersion() {
-  return getNpmLatestVersion('@ywwmm/openapi');
+  return getNpmLatestVersion('@ywwlmm/openapi');
 }

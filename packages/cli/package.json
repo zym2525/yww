@@ -1,5 +1,5 @@
 {
-  "name": "@ywwmm/cli",
+  "name": "@ywwlmm/cli",
   "version": "0.0.2",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/lib/index.js",
@@ -13,7 +13,7 @@
     "upgrade": "modern upgrade"
   },
   "dependencies": {
-    "@ywwmm/openapi": "workspace:^*"
+    "@ywwlmm/openapi": "workspace:^*"
   },
   "devDependencies": {
     "@modern-js/eslint-config": "2.47.1",

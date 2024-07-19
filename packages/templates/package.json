@@ -1,5 +1,5 @@
 {
-  "name": "@ywwmm/templates",
+  "name": "@ywwlmm/templates",
   "version": "0.1.1",
   "scripts": {
     "prepare": "modern build",

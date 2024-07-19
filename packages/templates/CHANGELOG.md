@@ -1,4 +1,4 @@
-# @ywwmm/templates
+# @ywwlmm/templates
 
 ## 0.1.1
 
