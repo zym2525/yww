@@ -211,7 +211,6 @@ export class C {
   }
 
   static pan() {
-    console.log('semver.lt(this.v, t): ', semver.lt(this.v, '1'));
     return semver.lt(this.v, t);
   }
 }
