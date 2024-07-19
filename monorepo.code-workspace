@@ -13,6 +13,14 @@
       "path": "packages/cli/"
     },
     {
+      "name": "utils",
+      "path": "packages/utils/"
+    },
+    {
+      "name": "storage",
+      "path": "packages/storage/"
+    },
+    {
       "name": "monorepo",
       "path": "."
     }
@@ -104,10 +112,7 @@
         "name": "调试cli create",
         "type": "node",
         "request": "launch",
-        "runtimeArgs": [
-          "-r",
-          "ts-node/register"
-        ],
+        "runtimeArgs": ["-r", "ts-node/register"],
         "cwd": "${workspaceRoot}/packages/cli/test",
         "protocol": "inspector",
         "internalConsoleOptions": "openOnSessionStart",
@@ -123,10 +128,7 @@
         "name": "调试cli openapi",
         "type": "node",
         "request": "launch",
-        "runtimeArgs": [
-          "-r",
-          "ts-node/register"
-        ],
+        "runtimeArgs": ["-r", "ts-node/register"],
         "cwd": "${workspaceRoot}/packages/cli/test",
         "protocol": "inspector",
         "internalConsoleOptions": "openOnSessionStart",
@@ -142,16 +144,11 @@
         "name": "调试openapi generateService",
         "type": "node",
         "request": "launch",
-        "runtimeArgs": [
-          "-r",
-          "ts-node/register"
-        ],
+        "runtimeArgs": ["-r", "ts-node/register"],
         "cwd": "${workspaceRoot}/packages/openapi/test",
         "protocol": "inspector",
         "internalConsoleOptions": "openOnSessionStart",
-        "args": [
-          "${workspaceFolder}\\packages\\openapi\\test\\bole-test"
-        ]
+        "args": ["${workspaceFolder}\\packages\\openapi\\test\\bole-test"]
       }
       // {
       //     "name": "Launch Program2",
