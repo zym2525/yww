@@ -145,6 +145,33 @@ importers:
         specifier: ~5.0.4
         version: 5.0.4
 
+  packages/storage:
+    devDependencies:
+      '@modern-js/eslint-config':
+        specifier: 2.49.3
+        version: 2.49.3(typescript@5.0.4)
+      '@modern-js/module-tools':
+        specifier: 2.49.3
+        version: 2.49.3(eslint@8.57.0)(typescript@5.0.4)
+      '@types/node':
+        specifier: ~16.11.7
+        version: 16.11.7
+      husky:
+        specifier: ~8.0.1
+        version: 8.0.3
+      lint-staged:
+        specifier: ~13.1.0
+        version: 13.1.4
+      prettier:
+        specifier: ~2.8.1
+        version: 2.8.8
+      rimraf:
+        specifier: ~3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ~5.0.4
+        version: 5.0.4
+
   packages/templates:
     devDependencies:
       '@modern-js/eslint-config':
@@ -180,21 +207,33 @@ importers:
       '@modern-js/module-tools':
         specifier: 2.49.3
         version: 2.49.3(eslint@8.57.0)(typescript@5.0.4)
+      '@types/lodash':
+        specifier: ^4.17.7
+        version: 4.17.7
       '@types/node':
         specifier: ~16.11.7
         version: 16.11.7
+      axios:
+        specifier: ^1.7.2
+        version: 1.7.2
       husky:
         specifier: ~8.0.1
         version: 8.0.3
       lint-staged:
         specifier: ~13.1.0
         version: 13.1.4
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       prettier:
         specifier: ~2.8.1
         version: 2.8.8
       rimraf:
         specifier: ~3.0.2
         version: 3.0.2
+      semver:
+        specifier: ^7.6.2
+        version: 7.6.2
       typescript:
         specifier: ~5.0.4
         version: 5.0.4
@@ -392,20 +431,6 @@ packages:
       semver: 6.3.1
     dev: false
 
-  /@babel/eslint-parser@7.23.10(@babel/core@7.24.5)(eslint@8.57.0):
-    resolution: {integrity: sha512-3wSYDPZVnhseRnxRJH6ZVTNknBz76AEnyC+AYYhasjP3Yy23qz0ERR7Fcd2SHmYuSFJ2kY9gaaDd3vyqU09eSw==}
-    engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
-    peerDependencies:
-      '@babel/core': ^7.11.0
-      eslint: ^7.5.0 || ^8.0.0
-    dependencies:
-      '@babel/core': 7.24.5
-      '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
-      eslint: 8.57.0
-      eslint-visitor-keys: 2.1.0
-      semver: 6.3.1
-    dev: true
-
   /@babel/eslint-plugin@7.23.5(@babel/eslint-parser@7.23.10)(eslint@8.57.0):
     resolution: {integrity: sha512-03+E/58Hoo/ui69gR+beFdGpplpoVK0BSIdke2iw4/Bz7eGN0ssRenNlnU4nmbkowNQOPCStKSwFr8H6DiY49g==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
@@ -539,8 +564,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/helper-define-polyfill-provider@0.6.1(@babel/core@7.23.9):
-    resolution: {integrity: sha512-o7SDgTJuvx5vLKD6SFvkydkSMBvahDKGiNJzG22IZYXhiqoe9efY7zocICBgzHV4IRg5wdgl2nEL/tulKIEIbA==}
+  /@babel/helper-define-polyfill-provider@0.6.2(@babel/core@7.23.9):
+    resolution: {integrity: sha512-LV76g+C502biUK6AyZ3LK10vDpDyCzZnhZFXkH1L75zHPj68+qc8Zfpx2th+gzwA2MzyK+1g/3EPl62yFnVttQ==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
@@ -553,21 +578,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
-
-  /@babel/helper-define-polyfill-provider@0.6.1(@babel/core@7.24.5):
-    resolution: {integrity: sha512-o7SDgTJuvx5vLKD6SFvkydkSMBvahDKGiNJzG22IZYXhiqoe9efY7zocICBgzHV4IRg5wdgl2nEL/tulKIEIbA==}
-    peerDependencies:
-      '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
-    dependencies:
-      '@babel/core': 7.24.5
-      '@babel/helper-compilation-targets': 7.23.6
-      '@babel/helper-plugin-utils': 7.24.5
-      debug: 4.3.4(supports-color@9.3.1)
-      lodash.debounce: 4.0.8
-      resolve: 1.22.8
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
 
   /@babel/helper-define-polyfill-provider@0.6.2(@babel/core@7.24.5):
     resolution: {integrity: sha512-LV76g+C502biUK6AyZ3LK10vDpDyCzZnhZFXkH1L75zHPj68+qc8Zfpx2th+gzwA2MzyK+1g/3EPl62yFnVttQ==}
@@ -3615,6 +3625,7 @@ packages:
   /@humanwhocodes/config-array@0.5.0:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
       debug: 4.3.4(supports-color@9.3.1)
@@ -3728,7 +3739,7 @@ packages:
       typescript: ^4 || ^5
     dependencies:
       '@babel/core': 7.24.5
-      '@babel/eslint-parser': 7.23.10(@babel/core@7.24.5)(eslint@8.57.0)
+      '@babel/eslint-parser': 7.23.10(@babel/core@7.23.9)(eslint@8.57.0)
       '@babel/eslint-plugin': 7.23.5(@babel/eslint-parser@7.23.10)(eslint@8.57.0)
       '@rsbuild/babel-preset': 0.6.11
       '@rsbuild/core': 0.6.11
@@ -4919,6 +4930,10 @@ packages:
       '@types/node': 16.11.7
     dev: true
 
+  /@types/lodash@4.17.7:
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
+    dev: true
+
   /@types/mdast@3.0.15:
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
     dependencies:
@@ -5716,7 +5731,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.24.4
       '@babel/core': 7.23.9
-      '@babel/helper-define-polyfill-provider': 0.6.1(@babel/core@7.23.9)
+      '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.23.9)
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -5729,7 +5744,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.24.4
       '@babel/core': 7.24.5
-      '@babel/helper-define-polyfill-provider': 0.6.1(@babel/core@7.24.5)
+      '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.24.5)
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
