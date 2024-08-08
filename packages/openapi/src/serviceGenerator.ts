@@ -20,7 +20,7 @@ import rimraf from 'rimraf';
 import pinyin from 'tiny-pinyin';
 import type { GenerateServiceProps } from './index';
 import Log from './log';
-import { stripDot, writeFile, C } from './util';
+import { stripDot, writeFile, C, toUpperFirstLetter, toLowerFirstLetter } from './util';
 import camelCase from 'lodash/camelCase';
 
 const BASE_DIRS = ['service', 'services'];
@@ -932,15 +932,7 @@ class ServiceGenerator {
 
   // 将地址path路径转为大驼峰
   private genDefaultFunctionName(path: string, pathBasePrefix: string) {
-    // 首字母转大写
-    function toUpperFirstLetter(text: string) {
-      return text.charAt(0).toUpperCase() + text.slice(1);
-    }
 
-    // 首字母转小写
-    function toLowerFirstLetter(text: string) {
-      return text.charAt(0).toLowerCase() + text.slice(1);
-    }
 
     // return path
     //   ?.replace(pathBasePrefix, '')

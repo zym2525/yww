@@ -1,0 +1,36 @@
+{
+  "name": "pett-admin-comp",
+  "version": "1.0.1",
+  "scripts": {
+    "prepare": "modern build",
+    "dev": "modern dev",
+    "build": "modern build",
+    "build:watch": "modern build -w",
+    "new": "modern new",
+    "upgrade": "modern upgrade"
+  },
+  "peerDependencies": {
+    "axios": "*",
+    "lodash": "*",
+    "semver": "*"
+  },
+  "devDependencies": {
+    "@modern-js/eslint-config": "2.49.3",
+    "@modern-js/module-tools": "2.49.3",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "~16.11.7",
+    "axios": "^1.7.2",
+    "husky": "~8.0.1",
+    "lint-staged": "~13.1.0",
+    "lodash": "^4.17.21",
+    "prettier": "~2.8.1",
+    "rimraf": "~3.0.2",
+    "semver": "^7.6.2",
+    "typescript": "~5.0.4"
+  },
+  "sideEffects": [],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

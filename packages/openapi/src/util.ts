@@ -214,3 +214,13 @@ export class C {
     return semver.lt(this.v, t);
   }
 }
+
+// 首字母转大写
+export function toUpperFirstLetter(text: string) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// 首字母转小写
+export function toLowerFirstLetter(text: string) {
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
